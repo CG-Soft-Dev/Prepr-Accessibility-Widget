@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accessibility Widget Demo - Making the web accessible for everyone">
+    <title>Accessibility Widget Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Main Content -->
+    <main>
+        <h1>Welcome to Our Website</h1>
+        <p>This is some dummy content to demonstrate the accessibility widget. We aim to provide an inclusive experience for all users.</p>
+        
+        <!-- About Section -->
+        <section aria-labelledby="about-heading">
+            <h2 id="about-heading">About Us</h2>
+            <p>Our company is dedicated to making the web accessible to everyone. We believe in the power of technology to bring people together and create opportunities for all.</p>
+            <p>Our team is composed of experts in web development, design, and accessibility. We work tirelessly to ensure that our products meet the highest standards of usability and accessibility.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section aria-labelledby="services-heading">
+            <h2 id="services-heading">Our Services</h2>
+            <ul>
+                <li>Web Development</li>
+                <li>Accessibility Audits</li>
+                <li>User Experience Design</li>
+                <li>Consulting Services</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Us</h2>
+            <p>If you have any questions or would like to learn more about our services, please feel free to reach out to us.</p>
+            <address>
+                Email: <a href="mailto:info@example.com">info@example.com</a><br>
+                Phone: <a href="tel:+1234567890">+1 (234) 567-890</a>
+            </address>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section aria-labelledby="testimonials-heading">
+            <h2 id="testimonials-heading">Testimonials</h2>
+            <div class="testimonials">
+                <blockquote>
+                    <p>"This company transformed our website into a fully accessible platform. Our users love the new design and functionality!"</p>
+                    <footer>
+                        <cite>– Happy Client</cite>
+                    </footer>
+                </blockquote>
+                <blockquote>
+                    <p>"Their team is knowledgeable and dedicated. They helped us understand the importance of accessibility and how to implement it effectively."</p>
+                    <footer>
+                        <cite>– Satisfied Customer</cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section aria-labelledby="blog-heading">
+            <h2 id="blog-heading">Blog</h2>
+            <div class="blog-posts">
+                <article>
+                    <h3>Latest Trends in Web Accessibility</h3>
+                    <p>Web accessibility is constantly evolving. Stay up-to-date with the latest trends and best practices to ensure your website is accessible to all users.</p>
+                    <a href="#" aria-label="Read more about Latest Trends in Web Accessibility">Read more...</a>
+                </article>
+                <article>
+                    <h3>How to Conduct an Accessibility Audit</h3>
+                    <p>Conducting an accessibility audit is crucial for identifying areas of improvement on your website. Learn how to perform an effective audit with our step-by-step guide.</p>
+                    <a href="#" aria-label="Read more about How to Conduct an Accessibility Audit">Read more...</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Accessibility Widget -->
+    <div id="accessibility-widget" class="widget-collapsed">
+        <button id="accessibility-toggle" aria-label="Open accessibility menu">
+            <span class="icon-wrapper">
+                <i class="fas fa-universal-access" aria-hidden="true"></i>
+            </span>
+        </button>
+        
+        <div id="accessibility-panel" role="dialog" aria-label="Accessibility Options">
+            <div class="panel-header">
+                <button id="close-panel" aria-label="Close accessibility menu">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+                <select id="language-selector" aria-label="Select language">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="it">Italiano</option>
+                    <option value="pt">Português</option>
+                    <option value="zh">中文</option>
+                </select>
+            </div>
+            
+            <div class="panel-content">
+                <div class="panel-title">
+                    <h2>Accessibility Options</h2>
+                </div>
+                
+                <!-- Reset and Search Section -->
+                <div class="panel-section">
+                    <button id="reset-settings" class="reset-btn">
+                        <i class="fas fa-undo" aria-hidden="true"></i> Reset Settings
+                    </button>
+                    <div class="search-container">
+                        <input type="text" id="accessibility-search" placeholder="Search..." aria-label="Search accessibility options">
+                        <button id="search-button" aria-label="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Accessibility Profiles -->
+                <div class="panel-section">
+                    <h3>Accessibility Profiles</h3>
+                    
+                    <div id="outer-vision-toggle" class="profile-toggle">
+                        <label class="switch">
+                            <input type="checkbox" id="vision-impaired-toggle" aria-label="Enable vision impaired profile">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="profile-label">Vision Impaired Profile</span>
+                        <small class="profile-description">Enhances website's visuals</small>
+                    </div>
+
+                    <div id="outer-adhd-toggle" class="profile-toggle">
+                        <label class="switch">
+                            <input type="checkbox" id="adhd-toggle" aria-label="Enable ADHD friendly profile">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="profile-label">ADHD Friendly Profile</span>
+                        <small class="profile-description">More focus & fewer distractions</small>
+                    </div>
+                </div>
+                
+                <!-- Text Size Controls -->
+                <div class="panel-section">
+                    <h3>Text Size</h3>
+                    <div class="text-size-controls" role="group" aria-label="Text size controls">
+                        <button class="text-size-btn" data-size="smaller" aria-label="Decrease text size">A-</button>
+                        <button class="text-size-btn active" data-size="normal" aria-label="Normal text size">A</button>
+                        <button class="text-size-btn" data-size="larger" aria-label="Increase text size">A+</button>
+                    </div>
+                </div>
+                
+                <!-- Contrast Controls -->
+                <div class="panel-section">
+                    <h3>Contrast</h3>
+                    <div class="contrast-controls" role="group" aria-label="Contrast controls">
+                        <button class="contrast-btn active" data-contrast="normal">Normal</button>
+                        <button class="contrast-btn" data-contrast="high">High Contrast</button>
+                    </div>
+                </div>
+
+                <!-- Other Options -->
+                <div class="panel-section">
+                    <h3>Other Options</h3>
+                    <div class="other-options">
+                        <label>
+                            <input type="checkbox" id="highlight-links">
+                            Highlight Links
+                        </label>
+                        <label>
+                            <input type="checkbox" id="readable-font">
+                            Readable Font
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html> 
